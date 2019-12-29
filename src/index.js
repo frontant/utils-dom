@@ -41,27 +41,3 @@ export const closest = (inEl, inSelector, inParent = document) => {
 
   return null;
 };
-
-// return the global offset of an element (top, left, width, height)
-export const getGlobalOffset = function(
-  elem,
-  ancestorElem = document.documentElement
-) {
-  let top = elem.offsetTop;
-  let left = elem.offsetLeft;
-  const width = elem.offsetWidth;
-  const height = elem.offsetHeight;
-
-  while (elem.offsetParent && elem.offsetParent !== ancestorElem) {
-    elem = elem.offsetParent;
-    top += elem.offsetTop;
-    left += elem.offsetLeft;
-  }
-
-  return {
-    top: top,
-    left: left,
-    width: width,
-    height: height,
-  };
-};
